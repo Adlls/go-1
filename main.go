@@ -104,7 +104,7 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 	}
 
 	if capacityUsageDisk > 0.9 {
-		fmt.Printf("Free disk space is too low %d Mb left\n", (int)(freeDiskSpace/1024/1024))
+		fmt.Printf("Free disk space is too low: %d Mb left\n", (int)(freeDiskSpace/1024/1024))
 	}
 
 	networkCapacity := float64(responseInInt64[6]) / float64(responseInInt64[5])

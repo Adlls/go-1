@@ -85,7 +85,6 @@ func parseAndGetArrayFromResponse(responseInSplit []string) [7]int64 {
 func proccessingStatsData(responseInInt64 [7]int64) {
 	if errorCount >= 3 {
 		fmt.Println("Unable to fetch server statistic")
-
 		return
 	}
 
@@ -96,7 +95,7 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 	capacityUsageMemory := float64(responseInInt64[2]) / float64(responseInInt64[1])
 
 	if capacityUsageMemory > 0.8 {
-		fmt.Printf("Memory usage too high: %d%\n", (int)(capacityUsageMemory*100))
+		fmt.Printf("Memory usage too high: %d%%\n", (int)(capacityUsageMemory*100))
 	}
 	capacityUsageDisk := float64(responseInInt64[4]) / float64(responseInInt64[3])
 	freeDiskSpace := responseInInt64[3] - responseInInt64[4]

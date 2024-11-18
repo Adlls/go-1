@@ -41,7 +41,7 @@ func requestToServer(host string) []string {
 	}
 	response.Body.Close()
 
-	return strings.Split(strings.Trim(string(body), "  \n"), ",")
+	return strings.Split(strings.Trim(string(body), " \n"), ",")
 }
 
 func parseAndGetArrayFromResponse(responseInSplit []string) [7]int64 {

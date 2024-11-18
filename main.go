@@ -98,8 +98,8 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 	if capacityUsageMemory > 0.8 {
 		fmt.Printf("Memory usage too high: %d%\n", (int)(capacityUsageMemory*100))
 	}
-	capacityUsageDisk := float64(responseInInt64[3]) / float64(responseInInt64[2])
-	freeDiskSpace := responseInInt64[3] - responseInInt64[2]
+	capacityUsageDisk := float64(responseInInt64[4]) / float64(responseInInt64[3])
+	freeDiskSpace := responseInInt64[3] - responseInInt64[4]
 	if 0 > freeDiskSpace {
 		freeDiskSpace = 0
 	}
@@ -108,9 +108,9 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 		fmt.Printf("Free disk space is too low %d Mb left\n", (int)(freeDiskSpace/1_000_000))
 	}
 
-	networkCapacity := float64(responseInInt64[4]) / float64(responseInInt64[3])
+	networkCapacity := float64(responseInInt64[6]) / float64(responseInInt64[5])
 
-	freeNetworkValue := responseInInt64[4] - responseInInt64[3]
+	freeNetworkValue := responseInInt64[5] - responseInInt64[6]
 
 	if 0 > freeNetworkValue {
 		freeNetworkValue = 0

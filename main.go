@@ -105,7 +105,7 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 	}
 
 	if capacityUsageDisk > 0.9 {
-		fmt.Printf("Free disk space is too low %d Mb left\n", (int)(freeDiskSpace/1_000_000))
+		fmt.Printf("Free disk space is too low %d Mb left\n", (int)(freeDiskSpace/1024/1024))
 	}
 
 	networkCapacity := float64(responseInInt64[6]) / float64(responseInInt64[5])
@@ -117,7 +117,7 @@ func proccessingStatsData(responseInInt64 [7]int64) {
 	}
 
 	if networkCapacity > 0.9 {
-		fmt.Printf("Network bandwidth usage high: %d Mbit/s available\n", (int)(freeDiskSpace/125_000))
+		fmt.Printf("Network bandwidth usage high: %d Mbit/s available\n", (int)(freeNetworkValue/1000/1000))
 	}
 	errorCount = 0
 }
